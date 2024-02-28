@@ -27,8 +27,8 @@
         "topic": "",
         "payload": "",
         "payloadType": "date",
-        "x": 480,
-        "y": 140,
+        "x": 200,
+        "y": 120,
         "wires": [
             [
                 "4d9da1ef74ef3eaa"
@@ -47,8 +47,63 @@
         "complete": "false",
         "statusVal": "",
         "statusType": "auto",
-        "x": 720,
+        "x": 520,
         "y": 120,
         "wires": []
+    },
+    {
+        "id": "55dd0376.f7c64c",
+        "type": "http in",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "url": "/hello",
+        "method": "get",
+        "upload": false,
+        "swaggerDoc": "",
+        "x": 180,
+        "y": 220,
+        "wires": [
+            [
+                "c656aba7.944288"
+            ]
+        ]
+    },
+    {
+        "id": "c2380ca8.0463",
+        "type": "http response",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "statusCode": "",
+        "headers": {},
+        "x": 520,
+        "y": 220,
+        "wires": []
+    },
+    {
+        "id": "c656aba7.944288",
+        "type": "change",
+        "z": "3af82246.3634ae",
+        "name": "",
+        "rules": [
+            {
+                "t": "set",
+                "p": "payload",
+                "pt": "msg",
+                "to": "{\"text\":\"Hello\"}",
+                "tot": "json"
+            }
+        ],
+        "action": "",
+        "property": "",
+        "from": "",
+        "to": "",
+        "reg": false,
+        "x": 350,
+        "y": 220,
+        "wires": [
+            [
+                "c2380ca8.0463"
+            ]
+        ]
     }
 ]
